@@ -37,35 +37,16 @@ public class Main extends JFrame {
     private final List<JComponent> inputFields = new ArrayList<>();
 
     // ── Friendly display names for known attributes ────────────
-    private static final Map<String, String> ATTR_LABELS    = new HashMap<>();
-    private static final Map<String, String> ATTR_TOOLTIPS  = new HashMap<>();
-    private static final Map<String, String> CLASS_LABELS   = new HashMap<>();
+    private static final Map<String, String> ATTR_LABELS = new HashMap<>();
+    private static final Map<String, String> CLASS_LABELS = new HashMap<>();
     static {
         ATTR_LABELS.put("Pclass",   "Passenger Class (1/2/3)");
         ATTR_LABELS.put("Sex",      "Gender  (0=Male, 1=Female)");
         ATTR_LABELS.put("Age",      "Age (years)");
         ATTR_LABELS.put("SibSp",    "Siblings / Spouses Aboard");
         ATTR_LABELS.put("Parch",    "Parents / Children Aboard");
-        ATTR_LABELS.put("Fare",     "Ticket Fare (£)  [0 – 512]");
+        ATTR_LABELS.put("Fare",     "Ticket Fare (£)");
         ATTR_LABELS.put("Embarked", "Port  (0=Southampton, 1=Cherbourg, 2=Queenstown)");
-
-        // tooltips shown on hover
-        ATTR_TOOLTIPS.put("Fare",
-            "<html>Enter the ticket price in British pounds (£).<br>"
-            + "Valid range: <b>0 – 512</b><br>"
-            + "Typical fares by class:<br>"
-            + "&nbsp;&nbsp;3rd class : £7 – £25<br>"
-            + "&nbsp;&nbsp;2nd class : £10 – £65<br>"
-            + "&nbsp;&nbsp;1st class : £30 – £512</html>");
-        ATTR_TOOLTIPS.put("Age",
-            "<html>Passenger age in years.<br>Valid range: <b>0 – 80</b></html>");
-        ATTR_TOOLTIPS.put("Pclass",
-            "<html>Ticket class:<br>&nbsp;&nbsp;1 = 1st class (upper)<br>&nbsp;&nbsp;2 = 2nd class (middle)<br>&nbsp;&nbsp;3 = 3rd class (lower)</html>");
-        ATTR_TOOLTIPS.put("SibSp",
-            "<html>Number of siblings or spouses aboard.<br>Valid range: <b>0 – 8</b></html>");
-        ATTR_TOOLTIPS.put("Parch",
-            "<html>Number of parents or children aboard.<br>Valid range: <b>0 – 6</b></html>");
-
         // class labels for Titanic
         CLASS_LABELS.put("0", "0 — Did NOT survive");
         CLASS_LABELS.put("1", "1 — Survived");
@@ -284,9 +265,6 @@ public class Main extends JFrame {
             } else {
                 field = new JTextField(10);
             }
-
-            String tip = ATTR_TOOLTIPS.get(attr.name());
-            if (tip != null) field.setToolTipText(tip);
 
             gbc.gridx = 1; gbc.weightx = 1;
             grid.add(field, gbc);
