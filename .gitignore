@@ -1,0 +1,14 @@
+# Compiled output
+out/
+
+# IntelliJ workspace (personal, not shared)
+.idea/workspace.xml
+.idea/shelf/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
